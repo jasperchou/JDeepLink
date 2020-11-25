@@ -13,10 +13,12 @@ target 'JDeepLink_Example' do
   end
 end
 
-pre_install do |installer|
-  installer.analysis_result.specifications.each do |s|
-    if s.name == 'JDeepLink'
-      s.swift_version = '5.0'
-    end
-  end
+post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            if ['Quick', 'Nimble-Snapshots', 'Nimble'].include? target.name
+                target.build_configurations.each do |config|
+                    config.build_settings['SWIFT_VERSION'] = '4'
+                end
+            end
+        end
 end
