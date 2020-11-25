@@ -12,3 +12,11 @@ target 'JDeepLink_Example' do
     pod 'Nimble-Snapshots' , '~> 6.3.0'
   end
 end
+
+pre_install do |installer|
+  installer.analysis_result.specifications.each do |s|
+    if s.name == 'JDeepLink'
+      s.swift_version = '5.0'
+    end
+  end
+end
