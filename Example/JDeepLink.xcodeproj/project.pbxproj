@@ -204,7 +204,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				CE94D1062A26EFCA66A557BD /* [CP] Embed Pods Frameworks */,
+				5673FCA171849FBFAA11A995 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +299,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5673FCA171849FBFAA11A995 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JDeepLink_Example/Pods-JDeepLink_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JDeepLink/JDeepLink.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JDeepLink.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JDeepLink_Example/Pods-JDeepLink_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		869741903FA2F14C9C4BBC43 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,24 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JDeepLink_Tests/Pods-JDeepLink_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE94D1062A26EFCA66A557BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JDeepLink_Example/Pods-JDeepLink_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/JDeepLink/JDeepLink.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JDeepLink.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JDeepLink_Example/Pods-JDeepLink_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF7E03281A6F9B9CB32BCE89 /* [CP] Check Pods Manifest.lock */ = {

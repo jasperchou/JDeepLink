@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'JDeepLink_Example' do
-  pod 'JDeepLink', :path => '../'
+    pod 'JDeepLink', :path => '../'
 
   target 'JDeepLink_Tests' do
     inherit! :search_paths
