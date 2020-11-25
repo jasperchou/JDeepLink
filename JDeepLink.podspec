@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JDeepLink'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'This is a mirror of DeepLinkKit written by Swift.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ This is a mirror of DeepLinkKit written by Swift. Rewritten for fun.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'JDeepLink/Classes/**/*'
   
