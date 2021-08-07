@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol JDLCopyable: class {
+protocol JDLCopyable: AnyObject {
     func copy() -> Self
 }
