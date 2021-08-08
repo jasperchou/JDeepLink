@@ -1,6 +1,6 @@
 # JDeepLink
 
-[![CI Status](https://img.shields.io/travis/jasperchou/JDeepLink.svg?style=flat)](https://travis-ci.org/jasperchou/JDeepLink)
+[![CI Status](https://app.travis-ci.com/jasperchou/JDeepLink.svg?branch=master)](https://app.travis-ci.com/github/jasperchou/JDeepLink)
 [![Version](https://img.shields.io/cocoapods/v/JDeepLink.svg?style=flat)](https://cocoapods.org/pods/JDeepLink)
 [![License](https://img.shields.io/cocoapods/l/JDeepLink.svg?style=flat)](https://cocoapods.org/pods/JDeepLink)
 [![Platform](https://img.shields.io/cocoapods/p/JDeepLink.svg?style=flat)](https://cocoapods.org/pods/JDeepLink)
