@@ -8,9 +8,9 @@
 
 import Foundation
 
-public typealias JDLRouteHandlerBlock = (_ deepLink: JDLDeepLink) -> ()
+public typealias JDLRouteHandlerBlock = (_ deepLink: JDLDeepLink) -> Void
 public typealias JDLApplicationCanHandleDeepLinksBlock = () -> Bool
-public typealias JDLRouteCompletionBlock = (_ handled: Bool, _ error: Error?) -> ()
+public typealias JDLRouteCompletionBlock = (_ handled: Bool, _ error: Error?) -> Void
 
 public class JDLDeepLinkRouter: NSObject {
     private(set) var routes: NSMutableOrderedSet = .init()
@@ -47,8 +47,8 @@ public class JDLDeepLinkRouter: NSObject {
         }
         
         var handled = false
-        var err: Error? = nil
-        var deepLink: JDLDeepLink? = nil
+        var err: Error?
+        var deepLink: JDLDeepLink?
         for route in routes {
             if let route = route as? String, let matcher = JDLRouteMatcher.matcher(route: route) {
                 deepLink = matcher.deepLink(url: url)
@@ -111,6 +111,9 @@ public class JDLDeepLinkRouter: NSObject {
     }
     
     public subscript(route: String) -> JDLRouteHandler.Type? {
+        get {
+            classesByRoute[route]
+        }
         set {
             if let newValue = newValue {
                 registerRoute(route, handlerClass: newValue)
@@ -120,12 +123,12 @@ public class JDLDeepLinkRouter: NSObject {
                 self.blocksByRoute.removeValue(forKey: route)
             }
         }
-        get {
-            classesByRoute[route]
-        }
     }
     
-    public subscript(route: String) -> JDLRouteHandlerBlock?{
+    public subscript(route: String) -> JDLRouteHandlerBlock? {
+        get {
+            blocksByRoute[route]
+        }
         set {
             if let newValue = newValue {
                 registerRoute(route, block: newValue)
@@ -134,9 +137,6 @@ public class JDLDeepLinkRouter: NSObject {
                 self.classesByRoute.removeValue(forKey: route)
                 self.blocksByRoute.removeValue(forKey: route)
             }
-        }
-        get {
-            blocksByRoute[route]
         }
     }
 }

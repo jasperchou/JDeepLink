@@ -10,7 +10,7 @@ import Foundation
 
 public class JDLRouteHandler {
     public var preferModalPresentation = false
-    public var targetViewController: (JDLTargetViewControllerProtocol & UIViewController)? = nil
+    public var targetViewController: (JDLTargetViewControllerProtocol & UIViewController)?
     required init() {}
     
     public func shouldHandle(_ deepLink: JDLDeepLink) -> Bool {

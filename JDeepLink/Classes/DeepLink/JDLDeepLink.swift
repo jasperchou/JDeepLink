@@ -40,7 +40,7 @@ public class JDLDeepLink: Equatable {
         }
         self.queryParameters = queryParameters
     }
-    
+
     public subscript(key: String) -> Any? {
         get {
             if let value = routeParameters[key] {

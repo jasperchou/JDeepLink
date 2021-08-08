@@ -28,6 +28,9 @@ post_install do |installer|
                     File.open(xcconfig_path, "w") { |file| file << new_xcconfig }
                 end
             end
+            target.build_configurations.each do |config|
+                config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = "NO"
+            end
         end
 end
 

@@ -20,9 +20,9 @@ extension String {
 extension String {
     func queryString(_ parameters: [String: Any]) -> String {
         var query = ""
-        parameters.forEach { (k, v) in
-            if let k = k.addingPercentEscapes(), let v = "\(v)".addingPercentEscapes() {
-                query += "\(k):\(v)&"
+        parameters.forEach { (key: String, value: Any) in
+            if let key = key.addingPercentEscapes(), let value = "\(value)".addingPercentEscapes() {
+                query += "\(key):\(value)&"
             }
         }
         if !query.isEmpty {

@@ -42,12 +42,12 @@ class JDLRegularExpression: NSRegularExpression {
         
         var routeParameters = [String: String]()
         for result in matches {
-            for i in 1 ..< result.numberOfRanges {
-                if i > groupNames.count {
+            for rangeIndex in 1 ..< result.numberOfRanges {
+                if rangeIndex > groupNames.count {
                     break
                 }
-                let name = self.groupNames[i - 1]
-                let range = result.range(at: i)
+                let name = self.groupNames[rangeIndex - 1]
+                let range = result.range(at: rangeIndex)
                 let value = String(string[Range.init(range, in: string)!])
                 routeParameters[name] = value
             }
@@ -90,7 +90,7 @@ extension JDLRegularExpression {
         if !modifiedStr.isEmpty && !(modifiedStr.first == "/") {
             modifiedStr = "^" + modifiedStr
         }
-        modifiedStr = modifiedStr + "$"
+        modifiedStr += "$"
         
         return modifiedStr
     }
@@ -111,4 +111,3 @@ extension JDLRegularExpression {
         return groupNames
     }
 }
-

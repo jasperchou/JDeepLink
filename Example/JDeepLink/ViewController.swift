@@ -17,7 +17,7 @@ class ViewController: UIViewController {
             print(link)
         }
         router.handle(url: URL(string: "xxx://test.com/test")!) { (isHandled, error) in
-            
+            print("\(isHandled) \(error)")
         }
     }
 
@@ -26,6 +26,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
     }
-
 }
-

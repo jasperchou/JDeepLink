@@ -9,7 +9,7 @@
 import Foundation
 
 class JDLRouteMatcher {
-    var scheme: String? = nil
+    var scheme: String?
     var regexMatcher: JDLRegularExpression!
     static func matcher(route: String) -> JDLRouteMatcher? {
         JDLRouteMatcher.init(route: route)

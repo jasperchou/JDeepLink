@@ -2,20 +2,26 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 # * https://docs.travis-ci.com/user/reference/osx/
+# * https://travis-ci.com/github/ryuichis/oclint-objc-travis-ci-examples/builds/211319615/config
+# * https://github.com/realm/SwiftLint
 
 osx_image: xcode12.5
 language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
+- brew install swiftlint
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 
 jobs:
     include:
-       - stage: Build And Unit Test
+       - stage: swiftlint
          script:
-            - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/JDeepLink.xcworkspace -scheme JDeepLink-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.5' ONLY_ACTIVE_ARCH=NO | xcpretty
+            - swiftlint
        - stage: pod lib lint
          script:
             - pod lib lint
+       - stage: Build And Unit Test
+         script:
+            - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/JDeepLink.xcworkspace -scheme JDeepLink-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.5' ONLY_ACTIVE_ARCH=NO | xcpretty
